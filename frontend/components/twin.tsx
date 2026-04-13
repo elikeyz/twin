@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User } from 'lucide-react';
+import Image from 'next/image';
 
 interface Message {
     id: string;
@@ -108,9 +109,9 @@ export default function Twin() {
             <div className="bg-linear-to-r from-slate-700 to-slate-800 text-white p-4 rounded-t-lg">
                 <h2 className="text-xl font-semibold flex items-center gap-2">
                     <Bot className="w-6 h-6" />
-                    AI Digital Twin
+                    Elijah&apos;s AI Digital Twin
                 </h2>
-                <p className="text-sm text-slate-300 mt-1">Your AI course companion</p>
+                <p className="text-sm text-slate-300 mt-1">Feel free to ask me anything about Elijah!</p>
             </div>
 
             {/* Messages */}
@@ -118,15 +119,17 @@ export default function Twin() {
                 {messages.length === 0 && (
                     <div className="text-center text-gray-500 mt-8">
                         {hasAvatar ? (
-                            <img
+                            <Image
+                                width={80}
+                                height={80}
                                 src="/avatar.png"
                                 alt="Digital Twin Avatar"
-                                className="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-gray-300"
+                                className="rounded-full mx-auto mb-3 border-2 border-gray-300"
                             />
                         ) : (
                             <Bot className="w-12 h-12 mx-auto mb-3 text-gray-400" />
                         )}
-                        <p>Hello! I&apos;m your Digital Twin.</p>
+                        <p>Hello! I&apos;m Elijah&apos;s Digital Twin.</p>
                         <p className="text-sm mt-2">Ask me anything about AI deployment!</p>
                     </div>
                 )}
@@ -141,10 +144,12 @@ export default function Twin() {
                         {message.role === 'assistant' && (
                             <div className="shrink-0">
                                 {hasAvatar ? (
-                                    <img
+                                    <Image
+                                        width={32}
+                                        height={32}
                                         src="/avatar.png"
                                         alt="Digital Twin Avatar"
-                                        className="w-8 h-8 rounded-full border border-slate-300"
+                                        className="rounded-full border border-slate-300"
                                     />
                                 ) : (
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
@@ -183,12 +188,14 @@ export default function Twin() {
 
                 {isLoading && (
                     <div className="flex gap-3 justify-start">
-                        <div className="flex-shrink-0">
+                        <div className="shrink-0">
                             {hasAvatar ? (
-                                <img
+                                <Image
+                                    width={32}
+                                    height={32}
                                     src="/avatar.png"
                                     alt="Digital Twin Avatar"
-                                    className="w-8 h-8 rounded-full border border-slate-300"
+                                    className="rounded-full border border-slate-300"
                                 />
                             ) : (
                                 <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">

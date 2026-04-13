@@ -171,7 +171,7 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {
-        "status": "healthy", 
+        "status": "healthy",
         "use_s3": USE_S3,
         "bedrock_model": BEDROCK_MODEL_ID
     }
